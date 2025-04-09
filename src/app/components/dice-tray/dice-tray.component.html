@@ -1,0 +1,21 @@
+<div class="dice-tray" [class.expanded]="isOpen">
+  <button class="toggle-btn" (click)="toggleTray()">🎲</button>
+
+  <div class="tray-content">
+    <div class="dice-row">
+      <app-die [sides]="4" (roll)="handleRoll(4, $event)"></app-die>
+      <app-die [sides]="6" (roll)="handleRoll(6, $event)"></app-die>
+      <app-die [sides]="8" (roll)="handleRoll(8, $event)"></app-die>
+      <app-die [sides]="10" (roll)="handleRoll(10, $event)"></app-die>
+      <app-die [sides]="12" (roll)="handleRoll(12, $event)"></app-die>
+      <app-die [sides]="20" (roll)="handleRoll(20, $event)"></app-die>
+    </div>
+    <div class="dice-result" *ngIf="lastRoll">
+      <p>
+        You rolled a <strong>d{{ lastRoll.sides }}</strong
+        >:
+        <span class="result">{{ lastRoll.result }}</span>
+      </p>
+    </div>
+  </div>
+</div>

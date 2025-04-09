@@ -1,0 +1,15 @@
+<button routerLink="/" class="nav-button">🎲</button>
+
+<div class="character-page">
+  <h2>Your Character Sheets</h2>
+
+  <button (click)="addCharacter()">➕ Add Character</button>
+
+  <div class="sheet-list">
+    <app-character-sheet-component
+      *ngFor="let char of characters"
+      [character]="char"
+      (update)="updateCharacter(char.id!, $event)"
+    ></app-character-sheet-component>
+  </div>
+</div>

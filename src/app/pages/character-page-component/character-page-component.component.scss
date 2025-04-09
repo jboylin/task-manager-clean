@@ -1,0 +1,47 @@
+.nav-button {
+    background: radial-gradient(circle at 30% 30%, #a62525, #6e0e0e);
+    color: #fff;
+    border: 2px solid #4b0b0b;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  .character-page {
+    padding: 2rem;
+    text-align: center;
+  
+    h2 {
+      font-size: 2rem;
+      font-family: 'IM Fell English SC', Georgia, serif;
+      margin-bottom: 1.5rem;
+      color: #5c442a;
+    }
+  
+    .sheet-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5rem;
+      justify-content: center;
+    }
+  
+    button {
+      font-family: 'IM Fell English SC', serif;
+      padding: 0.5rem 1rem;
+      margin-bottom: 1.5rem;
+      background-color: #c6a972;
+      border: none;
+      border-radius: 6px;
+      box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #b8925a;
+      }
+    }
+  }
+  

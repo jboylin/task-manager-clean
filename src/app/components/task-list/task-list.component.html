@@ -1,0 +1,42 @@
+<div class="task-list">
+  <div class="auth-bar">
+    <ng-container *ngIf="user; else loggedOut">
+      <p>Welcome, {{ user.displayName }}!</p>
+      <button (click)="logout()">Logout</button>
+    </ng-container>
+
+    <ng-template #loggedOut>
+      <button (click)="login()">Login with Google</button>
+    </ng-template>
+  </div>
+  <h2>Journey Sheet</h2>
+  <button class="theme-toggle" (click)="toggleDarkMode()">
+    🕯️ Candlelight Mode
+  </button>
+
+  <input
+    type="text"
+    [(ngModel)]="newTaskTitle"
+    (keydown.enter)="addTask()"
+    [placeholder]="animatedPlaceholder"
+  />
+  <button (click)="addTask()">Add Task</button>
+
+  <ul>
+    <li *ngFor="let task of tasks">
+      <label class="task-item">
+        <input
+          type="checkbox"
+          [checked]="task.completed"
+          (change)="toggleCompletion(task)"
+        />
+        <span
+          [class.completed]="task.completed"
+          [class.animate-strike-once]="justCompletedTaskId === task.id"
+          >{{ task.title }}</span
+        >
+      </label>
+      <button (click)="deleteTask(task.id!)">🔥</button>
+    </li>
+  </ul>
+</div>

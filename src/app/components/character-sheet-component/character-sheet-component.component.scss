@@ -1,0 +1,47 @@
+.character-sheet {
+    background: url('https://www.transparenttextures.com/patterns/paper-fibers.png'), #fdf6e3;
+    background-blend-mode: multiply;
+    padding: 1.5rem 2rem;
+    border: 2px solid #b29e79;
+    border-radius: 12px;
+    box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.2);
+    font-family: 'IM Fell English SC', Georgia, serif;
+    color: #4b392a;
+    text-shadow: 0.5px 0.5px #e9e1cf;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 600px;
+  
+    input {
+      width: 100%;
+      font-family: inherit;
+      font-size: 1.1rem;
+      padding: 0.4rem 0.6rem;
+      margin-bottom: 1rem;
+      border: 1px solid #b29e79;
+      background: #fdf8ef;
+      border-radius: 8px;
+      box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.1),
+                  inset -1px -1px 3px rgba(0, 0, 0, 0.1);
+      color: #3a2e1e;
+  
+      &::placeholder {
+        font-style: italic;
+        color: #9e8e77;
+      }
+    }
+  
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 2rem;
+  
+      label {
+        display: block;
+        margin-bottom: 0.25rem;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+  

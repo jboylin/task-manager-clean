@@ -1,0 +1,239 @@
+.task-list {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+  background: url('https://www.transparenttextures.com/patterns/paper-fibers.png'), #fdf6e3;
+  background-blend-mode: multiply;
+  border: 2px solid #b29e79;
+  border-radius: 12px;
+  box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.2);
+  font-family: 'IM Fell English SC', Georgia, serif;
+  color: #4b392a;
+  text-shadow: 0.5px 0.5px #e9e1cf;
+  line-height: 1.6;
+
+  h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #5c442a;
+    letter-spacing: 1px;
+  }
+
+  .auth-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  
+    p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+  }
+
+  .auth-bar button {
+    background: radial-gradient(circle at 30% 30%, #a62525, #6e0e0e);
+    color: #fffbe6;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 1.5rem;
+    width: 80px;
+    height: 80px;
+    border: 2px solid #4b0b0b;
+    border-radius: 50%;
+    box-shadow:
+      inset -3px -6px 0 rgba(0, 0, 0, 0.4),
+      0 0 15px rgba(255, 223, 140, 0.3),
+      0 0 30px rgba(255, 208, 99, 0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.1;
+    position: relative;
+    overflow: hidden;
+  
+    // Flickering glow animation
+    animation: waxGlow 3s infinite ease-in-out;
+  }
+
+  input[type="text"] {
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #a8906f;
+    background-color: #fdf8ef;
+    background-image: url("data:image/svg+xml,%3Csvg fill='%236e4e2c' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.945 3.69c.45.864.397 1.942-.182 3.055a.75.75 0 01-.063.098l-3.764 5.156a.75.75 0 01-.153.158l-7.41 5.793-2.446 2.355a.75.75 0 01-1.263-.497l.108-2.947 5.28-7.052a.75.75 0 01.118-.126l5.988-5.158a.75.75 0 01.078-.06c1.282-.852 2.346-1.055 3.238-.771.413.131.765.388 1.117.95zM6.867 18.456l-1.838 1.77.081-2.22 1.757.45z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 20px;
+    padding-left: 2.5rem;
+
+    font-family: 'IM Fell English SC', serif;
+    color: #3a2e1e;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    box-shadow:
+    inset 1px 1px 3px rgba(255, 255, 255, 0.1),
+    inset -1px -1px 3px rgba(0, 0, 0, 0.2);
+
+    &::placeholder {
+      font-style: italic;
+      color: #9e8e77;
+    }
+  }
+
+  .theme-toggle {
+    margin-bottom: 1rem;
+  }
+  
+
+  button {
+    background-color: #c6a972;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 0rem;
+
+    &:hover {
+      background-color: #b8925a;
+    }
+  }
+
+  .task-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    cursor: pointer;
+  
+    input[type="checkbox"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background-color: #eee0c9;
+      border: 2px solid #a98b65;
+      border-radius: 50%;
+      position: relative;
+      transition: background-color 0.2s ease;
+  
+      &:checked {
+        background-color: #6b3b1d;
+  
+        &::after {
+          content: '';
+          position: absolute;
+          top: 4px;
+          left: 4px;
+          width: 8px;
+          height: 8px;
+          background-color: #ffe6c7;
+          border-radius: 50%;
+          box-shadow: 0 0 6px rgba(255, 213, 133, 0.8);
+        }
+      }
+    }
+
+    span {
+      position: relative;
+      display: inline-block;
+    
+      &.completed::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, #4b2d18, #d0b18a);
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    
+      &.animate-strike-once::after {
+        animation: drawStrike 1.2s ease-in-out forwards;
+      }
+    
+      &.completed {
+        color: #7e7363;
+        font-style: italic;
+      }
+    }
+    
+    
+  }
+  
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #f8f3e8;
+      border: 1px solid #d1c1a5;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      margin-bottom: 0.75rem;
+
+      input[type="checkbox"] {
+        margin-right: 0.75rem;
+        transform: scale(1.2);
+      }
+
+      span {
+        flex-grow: 1;
+        font-size: 1.05rem;
+      }
+
+      button {
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        color: #a64b2a;
+        padding: 0;
+        cursor: pointer;
+
+        &:hover {
+          color: #842e13;
+        }
+      }
+    }
+  }
+}
+
+@keyframes waxGlow {
+  0%, 100% {
+    box-shadow:
+      inset -3px -6px 0 rgba(0, 0, 0, 0.4),
+      0 0 12px rgba(255, 223, 140, 0.4),
+      0 0 22px rgba(255, 208, 99, 0.2);
+  }
+  50% {
+    box-shadow:
+      inset -2px -5px 0 rgba(0, 0, 0, 0.3),
+      0 0 18px rgba(255, 200, 120, 0.5),
+      0 0 36px rgba(255, 180, 90, 0.3);
+  }
+}
+
+@keyframes drawStrike {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+

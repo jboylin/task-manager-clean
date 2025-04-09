@@ -1,0 +1,4 @@
+<div class="die-button" (click)="rollDie()" [ngClass]="{ rolling: isRolling }">
+  <div class="label">d{{ sides }}</div>
+  <div *ngIf="currentValue !== null" class="value">{{ currentValue }}</div>
+</div>

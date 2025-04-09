@@ -1,0 +1,40 @@
+.die-button {
+    background-color: #f4e8ce;
+    border: 1px solid #a98b65;
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    width: 60px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'IM Fell English SC', serif;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  
+    &:hover {
+      transform: scale(1.05);
+      background-color: #e8d6b4;
+    }
+  
+    .label {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+    }
+  
+    .value {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #a62525;
+    }
+
+    &.rolling {
+        animation: rollBounce 0.6s ease;
+    } 
+  }
+
+  @keyframes rollBounce {
+    0%   { transform: scale(1) rotate(0deg); }
+    30%  { transform: scale(1.1) rotate(6deg); }
+    60%  { transform: scale(0.95) rotate(-6deg); }
+    100% { transform: scale(1) rotate(0deg); }
+  }

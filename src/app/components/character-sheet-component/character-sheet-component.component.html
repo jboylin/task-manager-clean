@@ -1,0 +1,20 @@
+<div class="character-sheet">
+  <p>Hello from sheet {{ character.name }}</p>
+  <input
+    [(ngModel)]="character.name"
+    placeholder="Character Name"
+    (blur)="onFieldChange()"
+  />
+  <input
+    [(ngModel)]="character.class"
+    placeholder="Class"
+    (blur)="onFieldChange()"
+  />
+
+  <div class="stats">
+    <div *ngFor="let stat of statKeys()">
+      <label>{{ stat.toUpperCase() }}</label>
+      <input type="number" [(ngModel)]="character.stats[stat]" />
+    </div>
+  </div>
+</div>

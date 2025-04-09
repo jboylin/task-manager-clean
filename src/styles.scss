@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background: #f3ecd9;
+    font-family: 'IM Fell English SC', Georgia, serif;
+    color: #3a2e1e;
+    padding: 2rem;
+  }
+
+  body.dark-mode {
+    background-color: #1b130b;
+    color: #f8eacc;
+  
+    .task-list, .dice-tray {
+      background: #2a2117;
+      border-color: #6e573c;
+      box-shadow: 0 0 20px rgba(255, 198, 90, 0.2);
+  
+      h2 {
+        color: #f6e6c4;
+        text-shadow: 0 0 6px #ffdf91;
+        text-shadow: 0 0 4px #ffd577, 0 0 8px #ffbb33;
+      }
+  
+      input[type="text"] {
+        background-color: #3c2e1e;
+        border: 1px solid #705a3d;
+        color: #fcefc2;
+      }
+  
+      button {
+        background-color: #7c5a35;
+        color: #fcefc2;
+        border: 1px solid #b5986f;
+  
+        &:hover {
+          background-color: #916b47;
+        }
+      }
+  
+      .theme-toggle {
+        margin-bottom: 1rem;
+        background: #2d2115;
+        border: 1px solid #a0774b;
+        color: #ffe6b8;
+        padding: 0.4rem 1rem;
+        border-radius: 6px;
+        font-family: 'IM Fell English SC', serif;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(255, 214, 120, 0.3);
+      }
+  
+      li {
+        background-color: #3a2c1d;
+        border-color: #5f4a34;
+  
+        span.completed {
+          color: #d1c2aa;
+          text-shadow: none;
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+  
