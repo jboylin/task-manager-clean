@@ -16,7 +16,7 @@ export class CharacterSheetComponentComponent {
   @Output() update = new EventEmitter<Partial<Character>>();
 
   onFieldChange() {
-    this.update.emit({ ...this.character }); // ✅ emits the whole updated character
+    this.update.emit({ ...this.character }); // emits the whole updated character
   }
   statKeys(): StatKey[] {
     return ['str', 'dex', 'con', 'int', 'wis', 'cha'];
