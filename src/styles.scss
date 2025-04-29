@@ -4,6 +4,9 @@ body {
     font-family: 'IM Fell English SC', Georgia, serif;
     color: #3a2e1e;
     padding: 2rem;
+    @media (max-width: 600px) {
+      padding: 2.5rem 2rem;
+    }
   }
 
   body.dark-mode {
@@ -43,6 +46,9 @@ body {
         border: 1px solid #a0774b;
         color: #ffe6b8;
         padding: 0.4rem 1rem;
+        @media (min-width: 600px) {
+          padding: 1rem 1.5rem;
+        }
         border-radius: 6px;
         font-family: 'IM Fell English SC', serif;
         cursor: pointer;

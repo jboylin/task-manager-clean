@@ -1,10 +1,35 @@
 <div class="character-sheet">
-  <p>Hello from sheet {{ character.name }}</p>
+  <div class="resource-bubbles">
+    <div class="hp-bubbles">
+      <div class="bubble hp" (click)="adjustHp(-1)">➖</div>
+      <div class="bubble hp main">{{ character.hp || 0 }} ❤️</div>
+      <div class="bubble hp" (click)="adjustHp(1)">➕</div>
+    </div>
+
+    <div class="level-bubbles">
+      <div class="bubble lvl" (click)="adjustLevel(-1)">➖</div>
+      <div class="bubble lvl main">Lvl: {{ character.level || 0 }}</div>
+      <div class="bubble lvl" (click)="adjustLevel(1)">➕</div>
+    </div>
+
+    <div class="mana-bubbles">
+      <div class="bubble mana" (click)="adjustMana(-1)">➖</div>
+      <div class="bubble mana main">{{ character.mana || 0 }} 🔵</div>
+      <div class="bubble mana" (click)="adjustMana(1)">➕</div>
+    </div>
+  </div>
+  <p>{{ character.name }}</p>
   <input
     [(ngModel)]="character.name"
     placeholder="Character Name"
     (blur)="onFieldChange()"
   />
+  <input
+    [(ngModel)]="character.class"
+    placeholder="Class"
+    (blur)="onFieldChange()"
+  />
+
   <input
     [(ngModel)]="character.class"
     placeholder="Class"

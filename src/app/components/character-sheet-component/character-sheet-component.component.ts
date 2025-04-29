@@ -21,4 +21,19 @@ export class CharacterSheetComponentComponent {
   statKeys(): StatKey[] {
     return ['str', 'dex', 'con', 'int', 'wis', 'cha'];
   }
+
+  adjustHp(amount: number) {
+    this.character.hp = (this.character.hp || 0) + amount;
+    this.update.emit({ hp: this.character.hp });
+  }
+
+  adjustLevel(amount: number) {
+    this.character.level = (this.character.level || 0) + amount;
+    this.update.emit({ level: this.character.level });
+  }
+
+  adjustMana(amount: number) {
+    this.character.mana = (this.character.mana || 0) + amount;
+    this.update.emit({ mana: this.character.mana });
+  }
 }

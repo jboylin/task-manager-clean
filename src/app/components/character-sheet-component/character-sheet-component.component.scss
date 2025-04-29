@@ -43,5 +43,93 @@
         letter-spacing: 0.5px;
       }
     }
+
+    .resource-bubbles {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    
+    .bubble {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      font-family: 'IM Fell English SC', serif;
+      font-size: 0.45rem;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+      border: 2px solid #3a2e1e;
+      background: #fff8e1;
+      text-align: center;
+
+      &.main {
+        font-size: 0.75rem;
+        background: #f1e6c5;
+      }
+    
+      &.hp {
+        background: #ffd6d6;
+        border-color: #b94a48;
+        color: #6a1a1a;
+    
+        &.main {
+          background: #ffbaba;
+        }
+      }
+
+      &.lvl {
+        background: lightgray;
+        border-color: grey;
+        color: #6a1a1a;
+        width: 45px;
+        height: 45px;
+    
+        &.main {
+          background: darkgray;
+        }
+      }
+    
+      &.mana {
+        background: #d6e7ff;
+        border-color: #3c6fa3;
+        color: #1a3b6a;
+    
+        &.main {
+          background: #a7d4ff;
+        }
+      }
+    
+      &:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease-in-out;
+      }
+    }
+
+    .hp-bubbles {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+
+    .level-bubbles {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+
+    .mana-bubbles {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+    }
   }
   
